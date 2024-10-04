@@ -22,7 +22,6 @@ np.savez_compressed("image.npz", array=arr)
 class Window:
 
     def __init__(self):
-        os.chdir(os.path.dirname(sys.argv[0]) if os.path.dirname(sys.argv[0]) else ".")
         self.win = pygame.display.set_mode((900, 750))
         self.array = np.load("image.npz")["array"]
         image = pygame.transform.rotate(pygame.surfarray.make_surface(self.array), 270)
