@@ -1,7 +1,16 @@
 import os, sys
+import subprocess
 import random
-import pygame
-import numpy as np
+
+try:
+    import pygame
+    import numpy as np
+except ImportError:
+    subprocess.run([sys.executable, '-m', 'pip', 'install', 'pygame', 'numpy'])
+    import pygame
+    import numpy as np
+
+os.chdir(os.path.dirname(__file__))
 
 """
 arr = cv2.imread("smaller.jpg")
